@@ -1,6 +1,6 @@
 ### This repository correspons to the COMP6248-Reproducability-Challenge (2019-2020), and the reproduction report to the NMN-Drop for reasoning over the text.
 
-#### Based on the work of <Gupta, N., Lin, K., Roth, D., Singh, S. and Gardner, M., 2019. Neural Module Networks for Reasoning over Text. arXiv preprint arXiv:1912.04971.>
+#### Based on the work of [Gupta, N., Lin, K., Roth, D., Singh, S. and Gardner, M., 2019. Neural Module Networks for Reasoning over Text. arXiv preprint arXiv:1912.04971.](https://arxiv.org/abs/1912.04971)
 
 #### Zhongxin Xie*, Ming Xiong, Siyuan Liu
 
