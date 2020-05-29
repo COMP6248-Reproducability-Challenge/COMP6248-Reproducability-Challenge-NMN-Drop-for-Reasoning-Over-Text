@@ -38,4 +38,9 @@ allennlp train drop parser bert.jsonnet –include-package semQA -s ./iclr camer
 # Or
 bash train.sh
 
+# Predict:
+bash predict.sh
+
+# Evaluate:
+evaluate.sh
 ```
