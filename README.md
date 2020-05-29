@@ -31,8 +31,11 @@ pip install spacy==2.2.0
 python -m spacy download en_core_web_lg
 
 # Clone code and make symlinks
-git clone git@github.com:nitishgupta/nmn-drop.git
-cd nmn-drop/
-mkdir resources; cd resources; ln -s MODEL_CKPT_PATH/iclr_cameraready ./; cd ..    
-ln -s PATH_TO_allennlp-semparse/allennlp-semparse/allennlp_semparse/ ./ 
+git clone https://github.com/SylvanLiu/COMP6248-Reproducability-Challenge-NMN-Drop-for-Reasoning-Over-Text.git
+cd COMP6248-Reproducability-Challenge-NMN-Drop-for-Reasoning-Over-Text/
+# Train can be achieved in two different method:
+allennlp train drop parser bert.jsonnet –include-package semQA -s ./iclr cameraready/iclr drop data
+# Or
+bash train.sh
+
 ```
