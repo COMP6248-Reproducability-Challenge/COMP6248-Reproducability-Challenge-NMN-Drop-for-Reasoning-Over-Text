@@ -1,0 +1,120 @@
+{
+    "dataset_reader": {
+        "type": "drop_reader_bert",
+        "convert_spananswer_to_num": true,
+        "lazy": false,
+        "pretrained_model": "bert-base-uncased",
+        "question_length_limit": 50,
+        "skip_due_to_gold_programs": true,
+        "skip_instances": true,
+        "token_indexers": {
+            "tokens": {
+                "type": "bert-drop",
+                "pretrained_model": "bert-base-uncased"
+            }
+        }
+    },
+    "iterator": {
+        "type": "filter",
+        "batch_size": "4",
+        "cache_instances": false,
+        "filter_for_epochs": 5,
+        "filter_instances": true,
+        "track_epoch": true
+    },
+    "model": {
+        "type": "drop_parser_bert",
+        "action_embedding_dim": 100,
+        "auxwinloss": true,
+        "beam_size": 1,
+        "countfixed": false,
+        "cuda_device": 0,
+        "debug": false,
+        "dropout": 0.2,
+        "excloss": true,
+        "hardem_epoch": 5,
+        "initializers": [
+            [
+                "passage_attention_to_count|passage_count_hidden2logits",
+                {
+                    "type": "pretrained",
+                    "weights_file_path": "./pattn2count_ckpt/best.th"
+                }
+            ],
+            [
+                ".*_text_field_embedder.*",
+                "prevent"
+            ]
+        ],
+        "interpret": false,
+        "max_decoding_steps": 14,
+        "max_ques_len": 50,
+        "mmlloss": true,
+        "passage_attention_to_count": {
+            "type": "gru",
+            "bidirectional": true,
+            "hidden_size": 20,
+            "input_size": 4,
+            "num_layers": 2
+        },
+        "passage_attention_to_span": {
+            "type": "gru",
+            "bidirectional": true,
+            "hidden_size": 20,
+            "input_size": 4,
+            "num_layers": 2
+        },
+        "pretrained_bert_model": "bert-base-uncased",
+        "profile_freq": 0,
+        "qattloss": true,
+        "question_attention_to_span": {
+            "type": "gru",
+            "bidirectional": true,
+            "hidden_size": 20,
+            "input_size": 4,
+            "num_layers": 3
+        },
+        "scaling_bert": false,
+        "transitionfunc_attention": {
+            "type": "dot_product",
+            "normalize": true
+        }
+    },
+    "train_data_path": "./resources/data/drop_post_iclr/date_num/date_yd_num_hmyw_cnt_whoarg_600/drop_dataset_train.json",
+    "validation_data_path": "./resources/data/drop_post_iclr/date_num/date_yd_num_hmyw_cnt_whoarg_600/drop_dataset_mydev.json",
+    "trainer": {
+        "cuda_device": 0,
+        "gc_freq": 500,
+        "grad_norm": 5,
+        "num_epochs": 40,
+        "num_serialized_models_to_keep": 2,
+        "optimizer": {
+            "type": "bert_adam",
+            "lr": 1e-05
+        },
+        "patience": 20,
+        "should_log_parameter_statistics": false,
+        "shuffle": true,
+        "summary_interval": 100,
+        "validation_metric": "+f1"
+    },
+    "validation_dataset_reader": {
+        "type": "drop_reader_bert",
+        "lazy": false,
+        "pretrained_model": "bert-base-uncased",
+        "question_length_limit": 50,
+        "skip_due_to_gold_programs": false,
+        "skip_instances": false,
+        "token_indexers": {
+            "tokens": {
+                "type": "bert-drop",
+                "pretrained_model": "bert-base-uncased"
+            }
+        }
+    },
+    "validation_iterator": {
+        "type": "basic",
+        "batch_size": "4",
+        "track_epoch": true
+    }
+}

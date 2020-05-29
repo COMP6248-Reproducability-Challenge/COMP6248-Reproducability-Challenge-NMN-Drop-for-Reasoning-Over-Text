@@ -1,0 +1,32 @@
+<PassageAttention,PassageAttention:PassageAttention_answer> -> compare_date_greater_than
+<PassageAttention,PassageAttention:PassageAttention_answer> -> compare_date_lesser_than
+<PassageAttention,PassageAttention:PassageAttention_answer> -> compare_num_greater_than
+<PassageAttention,PassageAttention:PassageAttention_answer> -> compare_num_lesser_than
+<PassageAttention,PassageAttention:YearDifference> -> year_difference
+<PassageAttention:CountNumber> -> passageAttn2Count
+<PassageAttention:PassageAttention> -> filter_PassageAttention
+<PassageAttention:PassageAttention> -> maxNumPattn
+<PassageAttention:PassageAttention> -> minNumPattn
+<PassageAttention:PassageAttention_answer> -> relocate_PassageAttention
+<PassageAttention:PassageNumber> -> find_PassageNumber
+<PassageAttention:YearDifference> -> year_difference_single_event
+<PassageAttention_answer:PassageSpanAnswer> -> find_passageSpanAnswer
+<PassageNumber,PassageNumber:ComposedNumber> -> passagenumber_addition
+<PassageNumber,PassageNumber:ComposedNumber> -> passagenumber_difference
+@start@ -> ComposedNumber
+@start@ -> CountNumber
+@start@ -> PassageNumber
+@start@ -> PassageSpanAnswer
+@start@ -> YearDifference
+ComposedNumber -> [<PassageNumber,PassageNumber:ComposedNumber>, PassageNumber, PassageNumber]
+CountNumber -> [<PassageAttention:CountNumber>, PassageAttention]
+PassageAttention -> [<PassageAttention:PassageAttention>, PassageAttention]
+PassageAttention -> find_PassageAttention
+PassageAttention_answer -> [<PassageAttention,PassageAttention:PassageAttention_answer>, PassageAttention, PassageAttention]
+PassageAttention_answer -> [<PassageAttention:PassageAttention_answer>, PassageAttention]
+PassageNumber -> [<PassageAttention:PassageNumber>, PassageAttention]
+PassageNumber -> ground_ImplicitNumber
+PassageSpanAnswer -> [<PassageAttention_answer:PassageSpanAnswer>, PassageAttention_answer]
+PassageSpanAnswer -> extractPassageSpanAnswer
+YearDifference -> [<PassageAttention,PassageAttention:YearDifference>, PassageAttention, PassageAttention]
+YearDifference -> [<PassageAttention:YearDifference>, PassageAttention]
