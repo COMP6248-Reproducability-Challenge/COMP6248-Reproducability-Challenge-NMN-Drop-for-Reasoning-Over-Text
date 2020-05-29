@@ -2,20 +2,22 @@
 
 #### Based on the work of <Gupta, N., Lin, K., Roth, D., Singh, S. and Gardner, M., 2019. Neural Module Networks for Reasoning over Text. arXiv preprint arXiv:1912.04971.>
 
-####Zhongxin Xie*, Ming Xiong, Siyuan Liu
+#### Zhongxin Xie*, Ming Xiong, Siyuan Liu
 
-####Department of Electronic and Computer Science 
+#### Department of Electronic and Computer Science 
 
-####University of Southampton
+#### University of Southampton
 
-####Southampton, England SO17 1BJ
+#### Southampton, England SO17 1BJ
 
-####E-mail: (zx4a19, mx2n19, sl18n19) @soton.ac.uk
+#### E-mail: (zx4a19, mx2n19, sl18n19) @soton.ac.uk
 
 ```
 
 # Environment: 
+# BN: Python version has to be >3.6 and<3.7
 Linux Ubuntu 16.04LTS
+Python 3.6.7
 
 # The allennlp v0.9.0 has to and can only be installed by downloading from the their github release history to the local.
 wget https://github.com/allenai/allennlp/archive/v0.9.0.tar.gz
