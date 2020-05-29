@@ -2,15 +2,15 @@
 
 #### Based on the work of <Gupta, N., Lin, K., Roth, D., Singh, S. and Gardner, M., 2019. Neural Module Networks for Reasoning over Text. arXiv preprint arXiv:1912.04971.>
 
-Zhongxin Xie*, Ming Xiong, Siyuan Liu
+####Zhongxin Xie*, Ming Xiong, Siyuan Liu
 
-Department of Electronic and Computer Science 
+####Department of Electronic and Computer Science 
 
-University of Southampton
+####University of Southampton
 
-Southampton, England SO17 1BJ
+####Southampton, England SO17 1BJ
 
-E-mail: (zx4a19, mx2n19, sl18n19) @soton.ac.uk
+####E-mail: (zx4a19, mx2n19, sl18n19) @soton.ac.uk
 
 ```
 
