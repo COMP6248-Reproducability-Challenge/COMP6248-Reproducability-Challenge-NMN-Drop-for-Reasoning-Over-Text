@@ -44,9 +44,25 @@ bash train.sh
 
 # Predict:
 bash predict.sh
+#Or
+allennlp predict --output-file ${PREDICTION_FILE} \
+                 --predictor ${PREDICTOR} \
+                 --cuda-device ${GPU} \
+                 --include-package ${INCLUDE_PACKAGE} \
+                 --silent \
+                 --batch-size 4 \
+                 --use-dataset-reader \
+                 --overrides "{"model": { "beam_size": ${BEAMSIZE}, "debug": ${DEBUG}}}" \
+                 ${MODEL_TAR} ${VALDATA_FILE}
 
 # Evaluate:
 evaluate.sh
+#Or
+allennlp evaluate --output-file ${VAL_METRICS_FILE} \
+                  --cuda-device ${GPU} \
+                  --overrides "{"model": {"cuda_device": ${GPU} }}" \
+                  --include-package ${INCLUDE_PACKAGE} \
+                  ${MODEL_TAR} ${VALDATA_FILE}
 ```
 
 Shown below is a demo, and from my point of view, it can perform perfectly on the questions to the most of English-skills reading tests.
