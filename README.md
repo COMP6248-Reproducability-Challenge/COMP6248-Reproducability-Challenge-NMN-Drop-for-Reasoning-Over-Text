@@ -37,10 +37,12 @@ python -m spacy download en_core_web_lg
 # Clone code and make symlinks
 git clone https://github.com/SylvanLiu/COMP6248-Reproducability-Challenge-NMN-Drop-for-Reasoning-Over-Text.git
 cd COMP6248-Reproducability-Challenge-NMN-Drop-for-Reasoning-Over-Text/
-# Train can be achieved in two different method:
-allennlp train drop parser bert.jsonnet –include-package semQA -s ./iclr cameraready/iclr drop data
-# Or
+
+# Train:
 bash train.sh
+# Or
+allennlp train drop parser bert.jsonnet –include-package semQA -s ./iclr cameraready/iclr drop data
+
 
 # Predict:
 bash predict.sh
