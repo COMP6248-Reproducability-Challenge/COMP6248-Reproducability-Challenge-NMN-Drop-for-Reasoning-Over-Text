@@ -11,13 +11,23 @@ Southampton, England SO17 1BJ
 E-mail: (zx4a19, mx2n19, sl18n19) @soton.ac.uk
 
 ```
-# Make conda environment
-conda create -name nmn-drop python=3.6
-conda activate nmn-drop
 
-# Install required packages
-pip install allennlp==0.9
+# Environment: 
+Linux Ubuntu 16.04LTS
+
+# The allennlp v0.9.0 has to and can only be installed by downloading from the their github release history to the local.
+wget https://github.com/allenai/allennlp/archive/v0.9.0.tar.gz
+unzip v0.9.0.tar.gz
+pip install ./allennlp
+
+# The allennlp-semparsr has to and can only be installed by downloading from the their github release history to the local.
+git clone https://github.com/allenai/allennlp-semparse.git
+pip install ./allennlp-semparse
+
+# Other dependencies.
+pip install torch==1.5.0+cu101 torchvision==0.6.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
 pip install dateparser==0.7.2
+pip install spacy==2.2.0
 python -m spacy download en_core_web_lg
 
 # Clone code and make symlinks
