@@ -67,6 +67,8 @@ allennlp evaluate --output-file ${VAL_METRICS_FILE} \
                   ${MODEL_TAR} ${VALDATA_FILE}
 ```
 
+For the checkpoint that cannot be uploaded due to the file size limitation of GitHub, please check here: [link](https://drive.google.com/drive/folders/1ZPnQqQHBrWXEF4z3yTK5wL5sCI8gG98T)
+
 Shown below is a demo, and from my point of view, it can perform perfectly on the questions to the most of English-skills reading tests.
 
 Question: How many partially reusable launch systemswere developed?
